@@ -16,14 +16,7 @@ import com.acn.bookstore.model.Book;
 import com.acn.bookstore.service.BooksService;
 
 @RestController
-//@RequestMapping("/books")
 public class BooksController {
-
-//	@GetMapping("/all")
-//	private String getAllBooks() {
-//		return "hello";
-//	}
-
 	@Autowired
 	BooksService booksService;
 
