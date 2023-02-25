@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acn.bookstore.model.Book;
@@ -20,31 +19,31 @@ public class BooksController {
 	@Autowired
 	BooksService booksService;
 
-	@GetMapping("/book")
+	@GetMapping("/books")
 	private List<Book> getAllBooks() {
 		return booksService.getAllBooks();
 	}
 
-	@GetMapping("/book/{bookid}")
-	private Book getBooks(@PathVariable("bookid") int bookid) {
-		return booksService.getBooksById(bookid);
+	@GetMapping("/book/{bookId}")
+	private Book getBooks(@PathVariable("bookId") int bookId) {
+		return booksService.getBookById(bookId);
 	}
 
-	@DeleteMapping("/book/{bookid}")
-	private void deleteBook(@PathVariable("bookid") int bookid) {
-		booksService.delete(bookid);
+	@DeleteMapping("/book/{bookId}")
+	private void deleteBook(@PathVariable("bookId") int bookId) {
+		booksService.delete(bookId);
 	}
 
-	@PostMapping("/books")
-	private int saveBook(@RequestBody Book books) {
-		booksService.saveOrUpdate(books);
-		return books.getBookid();
+	@PostMapping("/book")
+	private int saveBook(@RequestBody Book book) {
+		booksService.saveOrUpdate(book);
+		return book.getBookId();
 	}
 
-	@PutMapping("/books")
-	private Book update(@RequestBody Book books) {
-		booksService.saveOrUpdate(books);
-		return books;
+	@PutMapping("/book")
+	private Book update(@RequestBody Book book) {
+		booksService.saveOrUpdate(book);
+		return book;
 	}
 
 }

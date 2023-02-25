@@ -20,12 +20,12 @@ public class BooksService {
 		return books;
 	}
 
-	public Book getBooksById(int id) {
+	public Book getBookById(int id) {
 		return booksRepository.findById(id).get();
 	}
 
-	public void saveOrUpdate(Book book) {
-		booksRepository.save(book);
+	public Book saveOrUpdate(Book book) {
+		return booksRepository.save(book);
 	}
 
 	public void delete(int id) {
