@@ -1,8 +1,7 @@
-package com.acn.bookstore.sevice;
+package com.acn.bookstore.service;
 
 import com.acn.bookstore.model.Book;
 import com.acn.bookstore.repository.BooksRepository;
-import com.acn.bookstore.service.BooksService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
